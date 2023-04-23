@@ -9,7 +9,6 @@ const refs = {
 };
 
 
-
 function galleryMarkup (galleryItems) {
   return galleryItems.map(({preview, original, description}) => {
         return `<li class="gallery__item">
@@ -24,6 +23,7 @@ function galleryMarkup (galleryItems) {
       </li>`;
     }).join('');
 };
+
 
 refs.galleryEl.innerHTML = galleryMarkup (galleryItems);
 
@@ -51,7 +51,9 @@ refs.galleryEl.addEventListener('click', (e) => {
       },
       onShow: () => {
               document.addEventListener('keydown', modalCloseOnEscape)
-    }});
+      }
+    });
+    
     instance.show(); 
 
   };
